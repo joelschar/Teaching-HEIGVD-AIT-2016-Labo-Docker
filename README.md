@@ -333,7 +333,7 @@ Take the opportunity to change the `MAINTAINER` of the image by your
 name and email.  Replace in both Docker files the `TODO: [GEN] Replace
 with your name and email`.
 
-To build your images, run the following commands inside your Vagrant
+To build your images, run the following commands inside your Vagrant	
 VM instance:
 
 ```bash
@@ -515,7 +515,7 @@ RUN chmod +x /etc/services.d/node/run
 
 **Remarks**:
 
-  - We can discuss if is is really necessary to do `RUN chmod +x ...` in the
+  - We can discuss if it is really necessary to do `RUN chmod +x ...` in the
     image creation as we already created the `run` files with `+x` rights. Doing
     so make sure that we will never have issue with copy/paste of the file or
     transferring between unix world and windows world.

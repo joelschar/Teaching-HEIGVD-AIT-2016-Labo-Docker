@@ -54,13 +54,23 @@ On illustre ici par la même occasion que l'ajout d'un troisième noeud à bien 
 ### <a name="task-1"></a> Task 1: Add a process supervisor to run several processes
 
 1. ![1546769814453](/home/joel/Switchdrive/HEIG/S-5/AIT/Labos/labo-04-Docker/report/img/1546769814453.png)
-2. Comme expliqué dans cet article ( https://docs.docker.com/config/containers/multi-service_container/ ), docker est consu pour ne faire tourner qu'un seul processus principale. Il est possible de faire des sous processus, mais ce sera le processus principale qui régit l'instance du container. 
+
+2. Aucune difficulté n'a été rencontrée dans cette étape. Tout c'est déroulé pour le mieux et nous avons une structure qui tient la route en fin de tache.
+
+   Au niveau du fonctionnent, comme expliqué dans cet article ( https://docs.docker.com/config/containers/multi-service_container/ ), docker est conçu pour ne faire tourner qu'un seul processus principale. Il est possible d'avoir des sous processus, mais c'est le processus principale qui régit l'instance du container. 
    Pour gérer plus facilement de multiple processus il est conseillé de démarrer un petit processus "init" qui sera le processus principale et les autres processus tournerons comme processus secondaires dans le container. Si un des processus cesse de fonctionner, cela n'influence pas l’existence du container.
-   Dans notre cas nous allons utiliser S6 comme gestionnaire de process. On aura donc le processus init qui tourne en tant que processus principale et S6 qui gère le fonctionnement des processus applications qui tourne dans le container. Cela nous offre une couche d’administration supplémentaire.
+   Dans notre cas nous allons ajouter S6 comme gestionnaire de process. On aura donc le processus init qui tourne en tant que processus principale et S6 qui gère le fonctionnement des processus applications qui tourne dans le container et nous permet ainsi de gérer plusieurs processus qui tournent en parallèle.
 
 ### <a name="task-2"></a> Task 2: Add a tool to manage membership in the web server cluster
 
+1. voir `logs/task2`
 
+2. On crée ici un cluster qui tourne autour de "ha" en indiquant de joindre ce nœud précis. En effet cela assure que tous les membre du cluster dépendent du même nœud, mais cela implique aussi que celui-ci soit déjà créé au moment de l'arrivée des autres nœuds. Ce que l'on voudrait c'est que tous les nœuds puissent joindre le cluster indépendamment les uns des autres.
+
+3. Serf fonctionne selon une communication bidirectionnelle entre les noeuds d'un même cluster. Les noeuds vont donc rejoindre un même cluster et vont s'informer régulièrement de leur état et de l'état des autres éléments du cluster. De nouvelle machines peuvent rejoindre ou quitter le cluster.
+
+   Il exsite d'autre solution qui permettent de résoudre cette problématique comme par exemple `consul` qui offre un certain nombre de fonctionnalité haut niveau supplémentaire qui ne sont pas implémentées par `serf` et fonctionne de manière centralisée. Cela peut avoir des avantages et des inconvénient, mais en l’occurrence, cela permet de gérer les services plus finement.
+   Il en existe d'autre comme Zookeeper, Eureka ou etcd.
 
 ### <a name="task-3"></a> Task 3: React to membership changes
 
