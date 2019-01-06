@@ -29,9 +29,9 @@ Nous allons mettre en pratique des connaissance théorique de haute disponibilit
 
 - **[M1]** :  Dans la solution implémentée au chapitre précédent nous devions faire toutes les manipulations de configuration et de reload du serveur proxy à la main. Cela implique donc une maintenance lourde et un interruption du service ce qui n'est pas souhaitable dans un environnement de production.
 
-- **[M2]** :  Pour ajouter un nouveau noeud `webapp` disponible pour le  il faudra :
+- **[M2]** :  Pour ajouter un nouveau nœud `webapp` disponible pour le serveur proxy  il faudra :
 
-1. Ajouter le serveur comme nouveau noeud dans le fichier de configuration du ha proxy `ha/config/haproxy.cfg` 
+1. Ajouter le serveur comme nouveau nœud dans le fichier de configuration du ha proxy `ha/config/haproxy.cfg` 
    ![1546763589456](/home/joel/Switchdrive/HEIG/S-5/AIT/Labos/labo-04-Docker/report/img/1546710081192.png)
 2. Configurer le script pour que la valeur `<s3>` soit remplacée par l'adresse ip du container dans le fichier de configuration du proxy : `ha/scripts/run.sh`
    ![1546763631016](/home/joel/Switchdrive/HEIG/S-5/AIT/Labos/labo-04-Docker/report/img/1546763631016.png)
