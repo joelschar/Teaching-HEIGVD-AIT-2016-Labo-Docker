@@ -32,13 +32,13 @@ Nous allons mettre en pratique des connaissance théorique de haute disponibilit
 - **[M2]** :  Pour ajouter un nouveau nœud `webapp` disponible pour le serveur proxy  il faudra :
 
 1. Ajouter le serveur comme nouveau nœud dans le fichier de configuration du ha proxy `ha/config/haproxy.cfg` 
-   ![1546763589456](./img/1546710081192.png)
+   ![1546763589456](img/1546710081192.png)
 2. Configurer le script pour que la valeur `<s3>` soit remplacée par l'adresse ip du container dans le fichier de configuration du proxy : `ha/scripts/run.sh`
-   ![1546763631016](./img/1546763631016.png)
+   ![1546763631016](img/1546763631016.png)
 3. Modifier le script `provision.sh` de vagrant pour que le container S3 soit créé sur la base de l'image webapp:
-   ![1546710384875](./img/1546710384875.png)
+   ![1546710384875](img/1546710384875.png)
 4. Linker le nouveau container au server proxy : 
-   ![1546710472863](./img/1546710472863.png)
+   ![1546710472863](img/1546710472863.png)
 5. Démarrer vagrant pour créer les containers ou lancer le script de reprovisonning.
 
 - **[M3]** : Dans cette solution il est nécessaire d'ajouter manuellement les noeuds dans la configuration de HAproxy et relancer manuellement le serveur. 
@@ -51,12 +51,12 @@ Nous allons mettre en pratique des connaissance théorique de haute disponibilit
 
 On illustre ici par la même occasion que l'ajout d'un troisième noeud à bien fonctionné.
 
-1. ![1546765641526](./img/1546765641526.png)
+1. ![1546765641526](img/1546765641526.png)
 2. URL vers le repo : https://github.com/joelschar/Teaching-HEIGVD-AIT-2016-Labo-Docker
 
 ## <a name="task-1"></a> Task 1: Add a process supervisor to run several processes
 
-1. ![1546769814453](./img/1546769814453.png)
+1. ![1546769814453](img/1546769814453.png)
 
 2. Aucune difficulté n'a été rencontrée dans cette étape. Tout c'est déroulé pour le mieux et nous avons une structure qui tient la route en fin de tache.
 
@@ -121,22 +121,22 @@ On illustre ici par la même occasion que l'ajout d'un troisième noeud à bien 
 ### <a name="task-6"></a> Task 6: Make the load balancer automatically reload the new configuration
 
 1. avec 2 noeuds :
-   ![1546811247072](./img/1546811247072.png)
+   ![1546811247072](img/1546811247072.png)
 
    On peut ensuite démarrer des neuds avec la commande `docker run -d --network heig --name s1 softengheigvd/webapp`
 
    avec 3 noeuds :
-   ![1546811422620](./img/1546811422620.png)
+   ![1546811422620](img/1546811422620.png)
 
 
    avec 5 neuds :
 
-   ![1546811483899](./img/1546811483899.png)
+   ![1546811483899](img/1546811483899.png)
 
 
    En stoppant le neud 2 et 3:
 
-   ![1546811586061](./img/1546811586061.png)
+   ![1546811586061](img/1546811586061.png)
 
 2. La solution finale est très réactive et fonctionne très bien. On voit bien que les noeuds sont ajouter au système et qu'ils sont fonctionnels.
    Une lacune qui résides dans cette solution est qu'elle ne permet l'ajout dynamique de noeud backend uniquement. Pour amélorier cette solution il serait judicieux d'appliquer la même structure pour le HaProxy. 
