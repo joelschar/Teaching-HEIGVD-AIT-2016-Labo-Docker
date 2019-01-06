@@ -119,10 +119,36 @@ On illustre ici par la même occasion que l'ajout d'un troisième noeud à bien 
 
 ### <a name="task-6"></a> Task 6: Make the load balancer automatically reload the new configuration
 
+1. avec 2 noeuds :
+   ![1546811247072](/home/joel/Switchdrive/HEIG/S-5/AIT/Labos/labo-04-Docker/report/img/1546811247072.png)
 
+   On peut ensuite démarrer des neuds avec la commande `docker run -d --network heig --name s1 softengheigvd/webapp`
+
+   avec 3 noeuds :
+   ![1546811422620](/home/joel/Switchdrive/HEIG/S-5/AIT/Labos/labo-04-Docker/report/img/1546811422620.png)
+
+
+   avec 5 neuds :
+
+   ![1546811483899](/home/joel/Switchdrive/HEIG/S-5/AIT/Labos/labo-04-Docker/report/img/1546811483899.png)
+
+
+   En stoppant le neud 2 et 3:
+
+   ![1546811586061](/home/joel/Switchdrive/HEIG/S-5/AIT/Labos/labo-04-Docker/report/img/1546811586061.png)
+
+2. La solution finale est très réactive et fonctionne très bien. On voit bien que les noeuds sont ajouter au système et qu'ils sont fonctionnels.
+   Une lacune qui résides dans cette solution est qu'elle ne permet l'ajout dynamique de noeud backend uniquement. Pour amélorier cette solution il serait judicieux d'appliquer la même structure pour le HaProxy. 
+   Il serait également intéressant d’analyser la question du `zero downtime` pour offrir à l'utilisateur la meilleure expérience possible.
+
+3. Pour une live démo n'hésitez pas à prendre contact avec nous. Nous serons ravis de vous faire une démonstration.
 
 ### <a name="difficulties"></a> Difficultés
 
+Le laboratoire étant très claire et bien détaillé avec une marche à suivre précise il nous à été très facile de suivre et de comprendre chaque étape. Si quelque chose ne fonctionnait pas du premier coup c'était plutôt du à une petite erreur de syntaxe ou une erreur dans le suivit des étapes.
+
 ### <a name="conclusion"></a> Conclusion
+
+
 
 ### 
