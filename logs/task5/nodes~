@@ -1,0 +1,16 @@
+### nodes directory content
+48a0ae649a76  ca62ace8bab6
+
+### 48a0ae649a76 content
+48a0ae649a76 172.18.0.4
+
+### ca62ace8bab6 content
+ca62ace8bab6 172.18.0.3
+
+###  -> after stopping s1
+### nodes directory content
+48a0ae649a76
+
+### 48a0ae649a76 content
+48a0ae649a76 172.18.0.4
+

@@ -99,7 +99,27 @@ On illustre ici par la même occasion que l'ajout d'un troisième noeud à bien 
 
 ### <a name="task-5"></a> Task 5: Generate a new load balancer configuration when membership changes
 
+1. voir `logs/task5/haproxy.cfg_1`
+   voir `logs/task5/haproxy.cfg_2`
+   voir `logs/task5/haproxy.cfg_3`
+
+   voir `logs/task5/docker_ps`
+
+   voir `logs/task5/inspect_ha`
+   voir `logs/task5/inspect_s1` 
+   voir `logs/task5/inspect_s2`
+
+2. voir `logs/task5/nodes`
+
+3. voir `logs/task5/nodes_after_s1_stopped`
+   voir `logs/task5/haproxy.cfg_after_s1_stopped`
+   voir `logs/task5/docker_ps_after_s1_stopped`
+
+4. a
+
 ### <a name="task-6"></a> Task 6: Make the load balancer automatically reload the new configuration
+
+
 
 ### <a name="difficulties"></a> Difficultés
 
