@@ -22,7 +22,8 @@ URL vers le repo : https://github.com/joelschar/Teaching-HEIGVD-AIT-2016-Labo-Do
 
 ## <a name="introduction"></a> Introduction
 
-
+Ce laboratoire à pour but d’approfondir notre expérience avec Docker et de voir quel sont les possibilités qu'offre HAProxy comme solution viable dans un environnement de production.
+Nous allons mettre en pratique des connaissance théorique de haute disponibilité que nous avons vu en cours sur la base d'une infrastructure de container docker et de HAProxy.
 
 ## <a name="task-0"></a> Task 0: Identify issues and install the tools
 
@@ -149,6 +150,4 @@ Le laboratoire étant très claire et bien détaillé avec une marche à suivre 
 
 ### <a name="conclusion"></a> Conclusion
 
-
-
-### 
+Ce laboratoire nous à permis selon un file conducteur très bien conduit de découvrir les possibilités de haute disponibilité qu'il est possible d'obtenir avec le serveur proxy HAProxy dans une infrastructure Docker. Nous avons vu comment automatiser toutes les étapes et rendre le système réactifs à l'ajout ou la suppression de noeuds dans le système.
