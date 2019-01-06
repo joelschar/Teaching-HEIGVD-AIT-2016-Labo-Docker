@@ -85,6 +85,18 @@ On illustre ici par la même occasion que l'ajout d'un troisième noeud à bien 
 
 ### <a name="task-4"></a> Task 4: Use a template engine to easily generate configuration files
 
+1. Il serait possible d'installer l'application directement depuis le container et ensuite de faire un docker commit pour appliquer la modification sur l'image docker. De cette manière il n'est pas nécessaire de rebuild l'image, mais la modification est tout de même persistée.
+
+   Dans le Dockerfile, chaque commande représente une nouvelle couche dans l'image docker. Créer une nouvelle couche signifie une image plus volumineuse. Combiner plusieurs commandes permet donc de rassembler les éléments sur une même coucher. Cela permet de réduire le volume de l'image.
+
+   Pour réduire encore la taille d'une il image il est possible avec des outils comme `docker-squash` de réduire la taille d'une image en écrasant toutes les couches pour en garder qu'une seule. Cela réduit radicalement l'espace utilisé par l'image, mais le procédé n'est pas compatible avec toutes les commandes comme (PORT, ENV, ..).
+
+2. Pour réduire le nombre de couche il serait possible par exemple de regrouper les fichiers copiés dans un seul répertoire et de le copier en une seule fois ou bien d'organiser l'ordre des couches pour pouvoir réutiliser une partie dans une autre image qui reprend une partie des éléments. Pour faire cela on va créer une image de référence et on va baser les images plus spécifique sur cette dernière en l'indiquant sur la première ligne avec la commande `FROM`.
+
+3. voir `logs/task4`
+
+4. Les fichiers générés sont sous la forme de donnée JSON et on remarque que beaucoup de valeurs sont null. Il serait donc judicieux de faire une sélection des données qui nous intéressent et d'ignorer le reste. Pour faire cela Docker met à disposition un paramètre `--format`à la commande `inspect`qui permet de choisir les données que l'on veut extraire. (https://docs.docker.com/engine/reference/commandline/inspect/)
+
 ### <a name="task-5"></a> Task 5: Generate a new load balancer configuration when membership changes
 
 ### <a name="task-6"></a> Task 6: Make the load balancer automatically reload the new configuration
