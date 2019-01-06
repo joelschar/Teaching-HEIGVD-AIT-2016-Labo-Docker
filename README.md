@@ -138,9 +138,9 @@ give in your report the reference of the question you are answering.
    approach at a high level.
 
 4. <a name="M4"></a>**[M4]** You probably noticed that the list of web
-  application nodes is hardcoded in the load balancer
-  configuration. How can we manage the web app nodes in a more dynamic
-  fashion?
+    application nodes is hardcoded in the load balancer
+    configuration. How can we manage the web app nodes in a more dynamic
+    fashion?
 
 5. <a name="M5"></a>**[M5]** In the physical or virtual machines of a
    typical infrastructure we tend to have not only one main process
@@ -506,7 +506,7 @@ Do the same in the `webapp`Docker file with the following replacement:
 # Copy the S6 service and make the run script executable
 COPY services/node /etc/services.d/node
 RUN chmod +x /etc/services.d/node/run
-```  
+```
 
 **References**:
 
@@ -1804,4 +1804,4 @@ git reset --hard
 
 Then, you are ready to go. You can provision your Vagrant VM again and start to work peacefully.
 
-There is a link to deeper explanation and procedure about the ending lines written by GitHub: https://help.github.com/articles/dealing-with-line-endings/
+There is a link to deeper explanation and procedure about the ending lines written by GitHub: https://help.github.com/articles/dealing-with-line-endings/ 
